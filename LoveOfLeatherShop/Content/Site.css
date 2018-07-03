@@ -1,24 +1,80 @@
-﻿body {
+﻿/*Main*/
+
+
+body {
+    color: #465058;
+    font-size: 1em;
+    font-weight: 200;
+    font-family: 'Roboto Condensed', sans-serif;
+    width: 100%;
+    text-align: center;
     padding-top: 50px;
-    padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+img {
+    max-height: 100%;
+    max-width: 100%;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+/*Nav*/
+.nav {
+    font-family: 'Rye', cursive;
+    border: 1px, black;
+    list-style-type: none;
+    text-align: right;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+    .nav li {
+        display: inline-block;
+        font-size: 18px;
+        padding-right: 20px;
+    }
+
+    .nav a {
+        color: black;
+    }
+
+        .nav a:hover {
+            color: #333;
+        }
+
+        .nav a:active {
+            color: #465058
+        }
+
+#logo p {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 18px;
 }
+
+.banner {
+    height: 180px;
+    width: 100%;
+    background-size: contain;
+}
+
+    .banner img {
+        height: 171px;
+        width: 861px;
+    }
+
+/*Typography*/
+
+#about {
+    margin-left: auto;
+    margin-right: auto;
+    width: 45em;
+    overflow: auto;
+}
+
+/*Footer*/
+
+#foot-bar {
+    font-family: 'Rye', cursive;
+    clear: both;
+}
+
+    #foot-bar img {
+        height: 30px;
+        width: 30px;
+    }

@@ -2,30 +2,90 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<! DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Love of Leather Shop</title>
+    <meta name="description" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Rye" rel="stylesheet">
+    <!--CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="siteWrapper" class="clearfix">
+        <header id="header">
+            <ul class="nav">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="product.html">Shop</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div id="logo">
+                <img src="image/lollogotop.jpg">
+                <p>HAND CRAFTED LEATHER GOODS</p>
+                <p>
+                    <a href="product.html">SHOP</a>
+                </p>
+            </div>
+        </header>
+        <main id="">
+            <div class="banner">
+                <img src="image/banner.jpg">
+            </div>
+
+            <div id="content">
+                <div class="gallery-bracelet">
+                    <p>Customized Leather Bracelet</p>
+                </div>
+                <div class="gallery-key-chains">
+                    <p>Customized Key Chains</p>
+                </div>
+                <div class="gallery-leather-totes">
+                    <p>Hand Made Leather Totes</p>
+                </div>
+            </div>
+        </main>
+        <div id="preFooter">
+            <div class="horizontal-break">
+                <hr>
+            </div>
+            <div class="bootstrap">
+                <div class="content">
+                    <h2 class="text-align-center">NEWS LETTER</h2>
+                    <p class="text-align-center">
+                        <em>
+                            <span style="font-size: 12px">&nbsp;</span>
+                            "Some Text Here"
+                        </em>
+                    </p>
+                </div>
+                <div class="bootstrap">
+                    <div class="block-content">
+                        <h2 class="text-align-center">CUSTOM AND QUALITY</h2>
+                        <blockquote class="text-align-center">Some Text about custom made and quality.</blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+            <div id="foot-bar">
+                <nav class="icon-list">
+                    <a href="https://www.instagram.com/love_of_leather"><img src="image/glyph-logo_May2016.png" alt"instagram="" logo"=""></a>
+                    <a href=""><img src="image/mail.png"></a><!--this is where the email link goes-->
+                </nav>
+            </div>
+            <div class="copyright-content">
+                <p class="text-align-center">
+                    <span style="font-size: 9px">COPYRIGHT ©LOVE OF LEATHER 2017, ALL RIGHTS RESERVED.</span>
+                </p>
+            </div>
+        </footer>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

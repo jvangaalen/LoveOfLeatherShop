@@ -10,7 +10,15 @@ namespace LoveOfLeatherShop.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+
+            KeyChain keyChain = new KeyChain()
+            {
+                Color = "Black",
+                Size = "Medium",
+                Engraved = false
+            };
+
+            return View(keyChain);
         }
 
         public ActionResult About()
