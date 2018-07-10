@@ -149,12 +149,16 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\KeyChainBoxController.cs" />
+    <Compile Include="Controllers\KeyChainFavPlaceController.cs" />
+    <Compile Include="Controllers\KeyChainRomanNumController.cs" />
+    <Compile Include="Controllers\KeyChainTagFobController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\KeyChainBox.cs" />
+    <Compile Include="Models\KeyChainFavPLace.cs" />
+    <Compile Include="Models\KeyChainRomanNum.cs" />
     <Compile Include="Models\KeyChains.cs" />
+    <Compile Include="Models\KeyChainTagFob.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -207,6 +211,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\KeyChainBox\" />
+    <Folder Include="Views\KeyChainFavPlace\" />
+    <Folder Include="Views\KeyChainRomanNum\" />
+    <Folder Include="Views\KeyChainTagFob\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
