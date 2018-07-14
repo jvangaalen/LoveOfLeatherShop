@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoveOfLeatherShop.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,28 +12,32 @@ namespace LoveOfLeatherShop.Controllers
         public ActionResult Index()
         {
 
+            Bracelet bracelet = new Bracelet()
+            {
+                WristSize = 5,
+                Color = "Dark Brown",
+                Engraved = ""
+            };
+
+            return View(bracelet);
+        
+            HandBag handBag = new HandBag()
+            {
+                Yellow = true,
+                HasHair = true,
+                FullGrain = true
+            };
+
+            return View(handBag);       
+
             KeyChain keyChain = new KeyChain()
             {
                 Color = "Black",
-                Size = "Medium",
-                Engraved = false
+                EndType = "Medium",
+                Engraved = ""
             };
 
             return View(keyChain);
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+        }       
     }
 }
