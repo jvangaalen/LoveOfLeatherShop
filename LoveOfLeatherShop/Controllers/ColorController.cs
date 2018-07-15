@@ -7,18 +7,16 @@ using System.Web.Mvc;
 
 namespace LoveOfLeatherShop.Controllers
 {
-    public class BraceletController : Controller
+    public class ColorController : Controller
     {
-        // GET: KeyChainRomanNum
+        // GET: Color
         public ActionResult Index()
         {
-            Bracelet bracelet = new Bracelet()
+            Color color = new Color()
             {
-                WristSize = 5,
-                Color = "Medium Brown",
-                Engraved = ""
+                ColorChoice = "Light Brown"
             };
-            return View(bracelet);
+            return View(color);
         }
     }
 }

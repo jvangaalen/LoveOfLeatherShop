@@ -1,47 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
+using System;
 using System.Data.Entity;
-using LoveOfLeatherShop.Models;
+
+
 
 namespace LoveOfLeatherShop
 {
-     class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            using (var db = new ItemContext())
+            using (var context = new Context())
             {
                 // Create and save a new Item Table
-                Console.Write("Enter a new Item into the cart. ");
-                var name = Console.ReadLine();
 
-                var item = new Item { Name = name };
-                db.Items.Add(item);
-                db.SaveChanges();
+                var keyChains = context.KeyChains
+                        .Include(kc => kc.Color)
+                        .Include(kc => kc.EndType)
+                        .Include(kc => kc.Engraved)
+                        .ToList();
 
-                // Dislpay all Items from the database
-                var query = from i in db.Items
-                            orderby i.Name
-                            select i;
-
-                Console.WriteLine("All items in the database: ");
-                foreach (var product in query)
+                foreach (var keyChain in keyChains)
                 {
-                    Console.WriteLine(product.Name);
+                    Console.WriteLine(keyChain.DisplayText);
                 }
 
-                Console.WriteLine("Press any key to exit...");
-                Console.ReadKey();
+                Console.ReadLine();
             }
         }
     }
-
-    public class ItemContext : DbContext
-    {
-        public DbSet<Item> Items { get; set; }
-        public DbSet<Bracelet> Bracelets { get; set; }
-        public DbSet<HandBag> HandBags { get; set; }
-        public DbSet<KeyChain> KeyChains { get; set; }
-    }
 }
+   

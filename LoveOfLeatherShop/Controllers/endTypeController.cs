@@ -7,19 +7,16 @@ using System.Web.Mvc;
 
 namespace LoveOfLeatherShop.Controllers
 {
-    public class HandBagController : Controller
+    public class EndTypeController : Controller
     {
-        // GET: HandBag
+        // GET: endType
         public ActionResult Index()
         {
-            HandBag handBag = new HandBag()
+            EndType endType = new EndType()
             {
-                Yellow = true,
-                HasHair = true,
-                FullGrain = true
+                KeyChainEnd = "Rounded"
             };
-
-            return View(handBag);
+            return View(endType);
         }
     }
 }

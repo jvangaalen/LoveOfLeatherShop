@@ -10,30 +10,11 @@ namespace LoveOfLeatherShop.Controllers
     public class HomeController : Controller
     {
         public ActionResult Index()
-        {
-
-            Bracelet bracelet = new Bracelet()
-            {
-                WristSize = 5,
-                Color = "Dark Brown",
-                Engraved = ""
-            };
-
-            return View(bracelet);
-        
-            HandBag handBag = new HandBag()
-            {
-                Yellow = true,
-                HasHair = true,
-                FullGrain = true
-            };
-
-            return View(handBag);       
-
+        { 
             KeyChain keyChain = new KeyChain()
             {
-                Color = "Black",
-                EndType = "Medium",
+                Color = "Dark Brown",
+                EndType = "flagged",
                 Engraved = ""
             };
 

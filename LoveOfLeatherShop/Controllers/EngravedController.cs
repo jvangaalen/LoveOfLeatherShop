@@ -7,19 +7,16 @@ using System.Web.Mvc;
 
 namespace LoveOfLeatherShop.Controllers
 {
-    public class KeyChainController : Controller
+    public class EngravedController : Controller
     {
-        // GET: KeyChain
+        // GET: Engraved
         public ActionResult Index()
         {
-            KeyChain keyChain = new KeyChain()
+            Engraved engraved = new Engraved()
             {
-                Color = "Light Brown",
-                EndType = "Rounded",
-                Engraved = ""
+                Message = ""
             };
-
-            return View();
+            return View(engraved);
         }
     }
 }
