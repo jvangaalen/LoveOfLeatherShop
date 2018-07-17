@@ -2,6 +2,7 @@
 using System;
 using System.Data.Entity;
 using LoveOfLeatherShop.Models;
+using LoveOfLeatherShop.DAL;
 
 namespace LoveOfLeatherShop
 {

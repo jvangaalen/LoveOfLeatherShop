@@ -1,4 +1,5 @@
-﻿using LoveOfLeatherShop.Models;
+﻿using LoveOfLeatherShop.DAL;
+using LoveOfLeatherShop.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,11 @@ namespace LoveOfLeatherShop.Controllers
                 EndType = "flagged",
                 Engraved = ""
             };
+
+            var X = new Context();
+            X.KeyChains.Add(keyChain);
+            X.SaveChanges();
+
 
             return View(keyChain);
         }       
