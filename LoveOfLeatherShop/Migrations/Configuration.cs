@@ -5,14 +5,14 @@ namespace LoveOfLeatherShop.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<LoveOfLeatherShop.ItemContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<LoveOfLeatherShop.Context>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(LoveOfLeatherShop.ItemContext context)
+        protected override void Seed(LoveOfLeatherShop.Context context)
         {
             //  This method will be called after migrating to the latest version.
 
