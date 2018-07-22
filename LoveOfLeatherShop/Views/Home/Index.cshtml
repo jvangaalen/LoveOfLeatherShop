@@ -1,4 +1,5 @@
-﻿@{
+﻿@model LoveOfLeatherShop.Models.KeyChain
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -47,8 +48,8 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">Dark Brown</a></li>
-                            <li><a href="#">Medium Brown</a></li>
+                            <li><a href="#">@ViewBag.Color.ToString("Dark Brown")</a></li>
+                            <li><a href="#">@ViewBag.Color.Tostring("Medium Brown")</a></li>
                         </ul>
                    </div>
                     <div class="dropdown ">
@@ -57,17 +58,17 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">Rounded V Point</a></li>
-                            <li><a href="#">Flagged Point</a></li>
+                            <li><a href="#">@ViewBag.EndType.ToString("Rounded V Point")</a></li>
+                            <li><a href="#">@ViewBag.EndType.ToString("Flagged Point")</a></li>
                         </ul>
                     </div>
                     <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1"></span>
+                        <span class="input-group-addon" id="basic-addon1">@ViewBag.Engraved.ToString("")</span>
                         <input type="text" class="form-control" placeholder="Enter text you want stamped here" aria-describedby="basic-addon1">
                     </div>
                     <ul class="nav nav-pills">
                         <li role="presentation" class="active"><a href="#">ADD TO CART</a></li>
-                        <li role="presentation"><a href="#">DELETE ORDER</a></li>                      
+                        <li role="presentation"><a href="@Url.Action("DELETE")">DELETE ORDER</a></li>                      
                     </ul>
                 </div>
             </div>
