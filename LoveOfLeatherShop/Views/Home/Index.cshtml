@@ -1,6 +1,7 @@
-﻿@model LoveOfLeatherShop.Models.KeyChain
+﻿
+@using LoveOfLeatherShop.Models
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Love Of Leather";
 }
 
 <! DOCTYPE html>
@@ -39,7 +40,7 @@
                     <img src="~/Content/image/ProductPics/IMG_9803.jpg">
                     <img src="~/Content/image/ProductPics/IMG_8830.jpg">
                     <img src="~/Content/image/ProductPics/IMG_9803.jpg">
-                </div>   
+                </div>
                 <div class="KeychainData">
                     <p>CUSTOMIZE YOUR KEYCHAIN: </p>
                     <div class="dropdown">
@@ -48,27 +49,27 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">@ViewBag.Color.ToString("Dark Brown")</a></li>
-                            <li><a href="#">@ViewBag.Color.Tostring("Medium Brown")</a></li>
+                            <li><a href="#">@Model.ViewBag.Color.ToString("Dark Brown")</a></li>
+                            <li><a href="#">@Model.ViewBag.Color.Tostring("Medium Brown")</a></li>
                         </ul>
-                   </div>
+                    </div>
                     <div class="dropdown ">
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             End Type
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">@ViewBag.EndType.ToString("Rounded V Point")</a></li>
-                            <li><a href="#">@ViewBag.EndType.ToString("Flagged Point")</a></li>
+                            <li><a href="#">@Model.ViewBag.EndType.ToString("Rounded V Point")</a></li>
+                            <li><a href="#">@Model.ViewBag.EndType.ToString("Flagged Point")</a></li>
                         </ul>
                     </div>
                     <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1">@ViewBag.Engraved.ToString("")</span>
+                        <span class="input-group-addon" id="basic-addon1">@Model.ViewBag.Engraved.ToString("")</span>
                         <input type="text" class="form-control" placeholder="Enter text you want stamped here" aria-describedby="basic-addon1">
                     </div>
                     <ul class="nav nav-pills">
                         <li role="presentation" class="active"><a href="#">ADD TO CART</a></li>
-                        <li role="presentation"><a href="@Url.Action("DELETE")">DELETE ORDER</a></li>                      
+                        <li role="presentation"><a href="@Html.ActionLink("DELETE", "DELETE")">DELETE ORDER</a></li>
                     </ul>
                 </div>
             </div>
@@ -81,7 +82,7 @@
                 <div class="block-content">
                     <h2 class="text-align-center">About Love of Leather</h2>
                     <blockquote class="text-align-center">
-                        Handcrafted in the heart of Kentucky. Quality materials, expert craftsmanship and attention to detail. 
+                        Handcrafted in the heart of Kentucky. Quality materials, expert craftsmanship and attention to detail.
                         English bridle leathers and American vegetable tanned leathers are the base of all products.
                     </blockquote>
                 </div>
