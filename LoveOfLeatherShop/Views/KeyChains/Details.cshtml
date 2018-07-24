@@ -1,0 +1,42 @@
+﻿@model LoveOfLeatherShop.Models.KeyChain
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KeyChain</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Color)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Engraved)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Engraved)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

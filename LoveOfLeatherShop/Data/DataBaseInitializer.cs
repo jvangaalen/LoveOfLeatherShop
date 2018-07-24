@@ -6,7 +6,7 @@ namespace LoveOfLeatherShop.DAL
 {
     //Database initializer class used to populate database with seed data.
 
-    internal class DataBaseInitializer : DropCreateDatabaseIfModelChanges<Context>
+    internal class DataBaseInitializer : DropCreateDatabaseAlways<Context>
     {
         protected override void Seed(Context context)
         {
@@ -24,7 +24,7 @@ namespace LoveOfLeatherShop.DAL
                 EndType = "Rounded",
                 Engraved = "This is my second key chain. "
             };
-            var keyChainOrder = new KeyChain()
+            var keyChainOrder3 = new KeyChain()
             {
                 Color = "Light Brown",
                 EndType = "Flagged",
@@ -37,6 +37,10 @@ namespace LoveOfLeatherShop.DAL
                 Engraved = "This is my fourth and final keychain in the seed method. "
             };
 
+            context.KeyChains.Add(keychainOrder1);
+            context.KeyChains.Add(keyChainOrder2);
+            context.KeyChains.Add(keyChainOrder3);
+            context.KeyChains.Add(keychainOrder4);
             context.SaveChanges();
             //base.Seed(context);
         }  
