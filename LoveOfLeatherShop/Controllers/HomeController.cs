@@ -14,8 +14,8 @@ namespace LoveOfLeatherShop.Controllers
         { 
             KeyChain keyChain = new KeyChain()
             {
-                Color = "Dark Brown", 
-                EndType = "flagged",
+                Color = "", 
+                EndType = "",
                 Engraved = ""
             };
 

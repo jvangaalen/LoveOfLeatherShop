@@ -49,8 +49,8 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">@Model.ViewBag.Color.ToString("Dark Brown")</a></li>
-                            <li><a href="#">@Model.ViewBag.Color.Tostring("Medium Brown")</a></li>
+                            <li>Dark Brown</li>
+                            <li>Medium Brown</li>
                         </ul>
                     </div>
                     <div class="dropdown ">
@@ -59,17 +59,17 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">@Model.ViewBag.EndType.ToString("Rounded V Point")</a></li>
-                            <li><a href="#">@Model.ViewBag.EndType.ToString("Flagged Point")</a></li>
+                            <li>Rounded V Point</li>
+                            <li>Flagged Point</li>
                         </ul>
                     </div>
                     <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1">@Model.ViewBag.Engraved.ToString("")</span>
+                        <span class="input-group-addon" id="basic-addon1">""</span>
                         <input type="text" class="form-control" placeholder="Enter text you want stamped here" aria-describedby="basic-addon1">
                     </div>
                     <ul class="nav nav-pills">
                         <li role="presentation" class="active"><a href="#">ADD TO CART</a></li>
-                        <li role="presentation"><a href="@Html.ActionLink("DELETE", "DELETE")">DELETE ORDER</a></li>
+                        <!----<li role="presentation">@Html.ActionLink("DELETE ORDER", "DELETE")"</li> --!>
                     </ul>
                 </div>
             </div>
