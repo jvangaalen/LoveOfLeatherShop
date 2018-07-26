@@ -8,22 +8,23 @@ using System.Web;
 using System.Web.Mvc;
 using LoveOfLeatherShop.DAL;
 using LoveOfLeatherShop.Models;
-
+// Create controller for Admin page.
 namespace LoveOfLeatherShop.Controllers
 {
     public class KeyChainsController : Controller
     {
         private Context db = new Context();
 
-        // GET: KeyChains
+        // Get KeyChains Objects from database
         public ActionResult Index()
         {
             return View(db.KeyChains.ToList());
         }
 
-        // GET: KeyChains/Details/5
+        // Get keyChains from Seed data in DataBaseInitializer.
         public ActionResult Details(int? id)
         {
+            // returns a Bad Request message in string is empty or null.
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -36,15 +37,14 @@ namespace LoveOfLeatherShop.Controllers
             return View(keyChain);
         }
 
-        // GET: KeyChains/Create
+        // Creates the keychain.
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: KeyChains/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // Post the keychain to the admin page.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Color,EndType,Engraved")] KeyChain keyChain)
@@ -59,7 +59,7 @@ namespace LoveOfLeatherShop.Controllers
             return View(keyChain);
         }
 
-        // GET: KeyChains/Edit/5
+        // Edits individual keychains in the database.
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -74,10 +74,7 @@ namespace LoveOfLeatherShop.Controllers
             return View(keyChain);
         }
 
-        // POST: KeyChains/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        // Edits individual keychain objects on admin page
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Color,EndType,Engraved")] KeyChain keyChain)
         {
@@ -90,7 +87,7 @@ namespace LoveOfLeatherShop.Controllers
             return View(keyChain);
         }
 
-        // GET: KeyChains/Delete/5
+        // Deletes keychains
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,7 +102,6 @@ namespace LoveOfLeatherShop.Controllers
             return View(keyChain);
         }
 
-        // POST: KeyChains/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

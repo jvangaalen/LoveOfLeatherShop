@@ -67,6 +67,17 @@ img {
 
 }
 
+.KeyChainData {
+    height: 50%;
+    width: 90%;
+}
+
+.dropdown {
+    align-items:flex-start;
+}
+
+
+
 /*Typography*/
 
 #about {
