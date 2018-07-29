@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
+﻿using System.Data.Entity;
+using System.Threading.Tasks;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using LoveOfLeatherShop.DAL;
 using LoveOfLeatherShop.Models;
-// Create controller for Admin page.
+
+// Create controller for Admin pagee.
+
 namespace LoveOfLeatherShop.Controllers
 {
     public class KeyChainsController : Controller
@@ -16,20 +14,23 @@ namespace LoveOfLeatherShop.Controllers
         private Context db = new Context();
 
         // Get KeyChains Objects from database
-        public ActionResult Index()
+
+        public async Task<ActionResult> Index()
         {
-            return View(db.KeyChains.ToList());
+            return View(await db.KeyChains.ToListAsync());
         }
 
         // Get keyChains from Seed data in DataBaseInitializer.
-        public ActionResult Details(int? id)
+
+        public async Task<ActionResult> Details(int? id)
         {
-            // returns a Bad Request message in string is empty or null.
             if (id == null)
             {
+                // Returns a bad request message if strin is empty or null.
+
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KeyChain keyChain = db.KeyChains.Find(id);
+            KeyChain keyChain = await db.KeyChains.FindAsync(id);
             if (keyChain == null)
             {
                 return HttpNotFound();
@@ -44,29 +45,30 @@ namespace LoveOfLeatherShop.Controllers
         }
 
         // Post the keychain to the admin page.
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Color,EndType,Engraved")] KeyChain keyChain)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Color,EndType,Engraved")] KeyChain keyChain)
         {
             if (ModelState.IsValid)
             {
                 db.KeyChains.Add(keyChain);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
             return View(keyChain);
         }
 
-        // Edits individual keychains in the database.
-        public ActionResult Edit(int? id)
+        // Edits individual keychain objects on admin page
+
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KeyChain keyChain = db.KeyChains.Find(id);
+            KeyChain keyChain = await db.KeyChains.FindAsync(id);
             if (keyChain == null)
             {
                 return HttpNotFound();
@@ -74,27 +76,29 @@ namespace LoveOfLeatherShop.Controllers
             return View(keyChain);
         }
 
-        // Edits individual keychain objects on admin page
+        
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Color,EndType,Engraved")] KeyChain keyChain)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Color,EndType,Engraved")] KeyChain keyChain)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(keyChain).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             return View(keyChain);
         }
 
         // Deletes keychains
-        public ActionResult Delete(int? id)
+
+        public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KeyChain keyChain = db.KeyChains.Find(id);
+            KeyChain keyChain = await db.KeyChains.FindAsync(id);
             if (keyChain == null)
             {
                 return HttpNotFound();
@@ -104,11 +108,11 @@ namespace LoveOfLeatherShop.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            KeyChain keyChain = db.KeyChains.Find(id);
+            KeyChain keyChain = await db.KeyChains.FindAsync(id);
             db.KeyChains.Remove(keyChain);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
